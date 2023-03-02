@@ -14,19 +14,27 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.16.2",
+    "@reach/dialog": "^0.18.0",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.7.0",
+    "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-google-gtag": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-manifest": "^5.7.0",
     "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-plugin-sitemap": "^6.7.0",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-plugin-styled-components": "^6.7.0",
+    "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-source-contentful": "^8.7.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
+    "gbimage-bridge": "^0.2.2",
+    "gsap": "^3.11.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "styled-components": "^5.3.6"
   }
 }
