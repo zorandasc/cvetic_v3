@@ -21,6 +21,15 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
+
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://svadbenicvet.com",
+        sitemap: "https://svadbenicvet.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
