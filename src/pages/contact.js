@@ -21,6 +21,30 @@ export const query = graphql`
 `;
 
 const Contact = ({ data }) => {
+  /*
+  function sendPushNotificationHandler() {
+    console.log("CLICKED");
+    fetch("https://exp.host/--/api/v2/push/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: "ExponentPushToken[mTxhvpPbcVLupvhbZKgqYJ]",
+        title: "Nova poruka od Svadbenog Cveta.",
+        body: "Od: Alija Alagic, alija@email.com",
+        data: {
+          name: "Pero Peric",
+          email: "pero@email.com",
+          message: "ajde bre",
+          date: new Date().toLocaleString(),
+          id: Date.now().toString(),
+        },
+      }),
+    });
+  }
+
+*/
   return (
     <>
       <StayledHero img={data.connectBcg}></StayledHero>
@@ -68,7 +92,7 @@ const SectionWrapper = styled.section`
     width: 90vw;
     margin: 0 auto;
   }
-/*
+  /*
   .form {
     background-color: #333;
     color: whitesmoke;
