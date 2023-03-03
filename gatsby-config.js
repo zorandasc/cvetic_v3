@@ -25,7 +25,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-google-gtag",
     "gatsby-plugin-sitemap",
     `gatsby-plugin-smoothscroll`,
     {
