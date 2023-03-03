@@ -27,7 +27,14 @@ module.exports = {
       options: {
         host: "https://svadbenicvet.com",
         sitemap: "https://svadbenicvet.com/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        env: {
+          development: {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+          },
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
       },
     },
     "gatsby-plugin-image",
@@ -41,6 +48,26 @@ module.exports = {
       options: {
         layout: require.resolve(`./src/components/Layout.js`),
         injectPageProps: false,
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Poppins`,
+            file: `https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap`,
+          },
+          {
+            name: `Great Vibes`,
+            file: `https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400;700&display=swap`,
+          },
+        ],
       },
     },
     {
