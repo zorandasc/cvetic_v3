@@ -7,7 +7,7 @@ import Blogs from "../components/Blog/Blogs"
 const Blog = ({ data }) => {
   return (
     <>
-      <StayledHero img={data.blog.childImageSharp.fluid}></StayledHero>
+      <StayledHero img={data.blog}></StayledHero>
       <Blogs></Blogs>
     </>
   );
@@ -21,9 +21,11 @@ export const query = graphql`
   query {
     blog: file(relativePath: { eq: "bouq.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }

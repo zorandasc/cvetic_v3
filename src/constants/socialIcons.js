@@ -20,7 +20,7 @@ const socialIcons = [
   {
     icon: <FaInstagram className="socijala"></FaInstagram>,
     label: "instagram",
-    url: "https://www.instagram.com/cvetici__za__svadbu/?igshid=1bs2j1shz10z",
+    url: "https://www.instagram.com/svadbeni_cvet/",
   },
   {
     icon: <FaYoutube className="socijala"></FaYoutube>,

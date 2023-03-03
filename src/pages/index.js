@@ -3,14 +3,14 @@ import { graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import retro from "../images/retro_rose.svg";
-import { Seo, StayledHero, Banner, Wave } from "../components";
+import { Seo, StayledHero, Banner, Wave, Particle } from "../components";
 import AboutHomy from "../components/Home/AboutHomy";
 import FeaturedGalery from "../components/Home/FeaturedGalery";
 
 const IndexPage = ({ data }) => {
   return (
     <>
-      <StayledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+      <StayledHero home="true" img={data.defaultBcg}>
         <Banner
           title="svadbeni cvet"
           info="Pridruži nam se i istraži čarobni svet svadbenih rukom pravljenih dekoracija i ukrasa"
@@ -20,6 +20,7 @@ const IndexPage = ({ data }) => {
           </AniLink>
         </Banner>
         <Wave></Wave>
+        <Particle></Particle>
       </StayledHero>
       <AboutHomy></AboutHomy>
       <div
@@ -43,9 +44,11 @@ export const query = graphql`
   query {
     defaultBcg: file(relativePath: { eq: "marriage.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }

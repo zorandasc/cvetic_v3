@@ -20,8 +20,8 @@ const Button = styled.button`
   align-items: center;
   cursor: pointer;
   z-index: 2;
-  opacity: ${props => (props.height ? "1" : "0")};
-  transform:${props => (props.height ? "translateY(0)" : "translateY(-900%)")};
+  opacity: ${props => (props.show ? "1" : "0")};
+  transform:${props => (props.show ? "translateY(0)" : "translateY(-900%)")};
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
   transition: all 500ms ease-in-out;
 `
@@ -29,7 +29,7 @@ const Button = styled.button`
 const ScrollButton = () => {
   const { height } = React.useContext(AppContext)
   return (
-    <Button onClick={() => scrollTo("#header")} height={height > 4000}>
+    <Button onClick={() => scrollTo("#header")} show={height > 4000}>
       <FaArrowCircleUp style={{
         color: "var(--mainBlack)",
         cursor: "pointer",

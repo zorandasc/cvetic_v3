@@ -8,6 +8,9 @@ import Title from "./Title";
 import StayledHero from "./StayledHero";
 import Banner from "./Banner";
 import Wave from "./Wave";
+import ScrollButton from "./ScrollButton";
+import RichImage from "./RichImage";
+import Particle from "./Particle";
 
 export {
   Layout,
@@ -20,4 +23,7 @@ export {
   StayledHero,
   Banner,
   Wave,
+  ScrollButton,
+  RichImage,
+  Particle,
 };

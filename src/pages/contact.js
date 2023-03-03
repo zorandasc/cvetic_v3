@@ -10,9 +10,11 @@ export const query = graphql`
   query {
     connectBcg: file(relativePath: { eq: "wedding12.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }
@@ -21,7 +23,7 @@ export const query = graphql`
 const Contact = ({data}) => {
   return (
     <>
-      <StayledHero img={data.connectBcg.childImageSharp.fluid}></StayledHero>
+      <StayledHero img={data.connectBcg}></StayledHero>
       <SectionWrapper>
         <Title title="kontaktirajte" subtitle="nas"></Title>
         <div className="center">

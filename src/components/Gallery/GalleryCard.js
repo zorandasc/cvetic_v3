@@ -9,7 +9,6 @@ const GalleryCard = ({ className, work }) => {
 
   return (
     <AniLink fade className={className} to={`/gallery/${slug}`}>
-    
       <div className="imgContainer">
         <GatsbyImage
           image={mainImage}
@@ -28,7 +27,6 @@ const GalleryCard = ({ className, work }) => {
       <h3 className="ribbon4">
         {prefiks} {category}
       </h3>
-    
     </AniLink>
   );
 };

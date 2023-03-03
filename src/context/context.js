@@ -3,8 +3,8 @@ import React from "react"
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-  const [width, setWidth] = React.useState(null)
-  const [height, setHeight] = React.useState(null)
+  const [width, setWidth] = React.useState(0)
+  const [height, setHeight] = React.useState(0)
   const [isSidebarOpen, setSidebar] = React.useState(false)
 
   const handleOpenSidebar = () => {
@@ -39,6 +39,8 @@ const AppProvider = ({ children }) => {
     }
   }, [])
 
+
+  
   return (
     <AppContext.Provider
       value={{

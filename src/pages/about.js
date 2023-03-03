@@ -10,9 +10,11 @@ export const query = graphql`
   query {
     aboutBcg: file(relativePath: { eq: "band.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }
@@ -21,7 +23,7 @@ export const query = graphql`
 const About = ({ data }) => {
   return (
     <>
-      <StayledHero img={data.aboutBcg.childImageSharp.fluid}></StayledHero>
+      <StayledHero img={data.aboutBcg}></StayledHero>
       <SectionWrapper>
         <Title title="naša" subtitle="misija"></Title>
         <div className="aboutCenter">

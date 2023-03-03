@@ -8,7 +8,7 @@ import Gallerys from "../components/Gallery/Gallerys";
 const Gallery = ({ data }) => {
   return (
     <>
-      <StayledHero img={data.roses.childImageSharp.fluid}></StayledHero>
+      <StayledHero img={data.roses}></StayledHero>
       <div
         style={{
           backgroundImage: `url(${retro})`,
@@ -30,9 +30,11 @@ export const query = graphql`
   query {
     roses: file(relativePath: { eq: "contact.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
       }
     }
   }
