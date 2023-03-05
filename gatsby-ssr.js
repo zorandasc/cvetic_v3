@@ -13,3 +13,8 @@ import "./src/css/layout.css";
 export const wrapRootElement = ({ element }) => {
   return <AppProvider>{element}</AppProvider>
 }
+
+
+export const onRenderBody = ({ setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: "sr-Latn-CS" });
+};

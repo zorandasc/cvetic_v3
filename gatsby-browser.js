@@ -5,11 +5,20 @@
  */
 // You can delete this file if you're not using it
 
-import React from "react"
-import { AppProvider } from "./src/context"
+import React from "react";
+import { AppProvider } from "./src/context";
 
-import "./src/css/layout.css"
+import "@fontsource/poppins"; //default to 400
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/great-vibes";
+
+import "./src/css/layout.css";
 
 export const wrapRootElement = ({ element }) => {
-  return <AppProvider>{element}</AppProvider>
-}
+  return <AppProvider>{element}</AppProvider>;
+};
+
+export const onRenderBody = ({ setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: "sr-Latn-CS" });
+};

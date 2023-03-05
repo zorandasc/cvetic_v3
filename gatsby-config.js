@@ -51,26 +51,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-omni-font-loader`,
-      options: {
-        enableListener: true,
-        preconnect: [
-          `https://fonts.googleapis.com`,
-          `https://fonts.gstatic.com`,
-        ],
-        web: [
-          {
-            name: `Poppins`,
-            file: `https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap`,
-          },
-          {
-            name: `Great Vibes`,
-            file: `https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400;700&display=swap`,
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Svadbeni Cvet`,
@@ -90,6 +70,6 @@ module.exports = {
       },
       __key: "images",
     },
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
   ],
 };

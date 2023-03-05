@@ -14,15 +14,16 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/great-vibes": "^4.5.10",
+    "@fontsource/poppins": "^4.5.10",
     "@loadable/component": "^5.15.3",
     "@reach/dialog": "^0.18.0",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.7.0",
     "gatsby-background-image": "^1.6.0",
-    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-manifest": "^5.7.0",
-    "gatsby-plugin-offline": "^6.7.0",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-plugin-sitemap": "^6.7.0",
