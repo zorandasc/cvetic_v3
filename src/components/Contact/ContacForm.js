@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { navigate } from "gatsby";
 
 const ContacForm = ({ className }) => {
   const [state, setState] = useState({ name: "", email: "", message: "" });
 
   const { name, email, message } = state;
 
-  const handleChange = (e) => setState({ [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setState((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
 
   function sendPushNotificationHandler(name, email, message) {
     if (!name || !email || !message) return;
@@ -22,21 +27,13 @@ const ContacForm = ({ className }) => {
         dateTime: new Date().toLocaleString(),
       }),
     })
-      .then(async (response) => {
-        const isJson = response.headers
-          .get("content-type")
-          ?.includes("application/json");
-        const data = isJson ? await response.json() : null;
-
-        // check for error response
+      .then((response) => {
         if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (data && data.message) || response.status;
-          return Promise.reject(error);
+          return Promise.reject(response.status);
         }
       })
       .catch((error) => {
-        console.error("There was an error!", error);
+        console.error("There was an error sending PushNotification!", error);
       });
   }
 
@@ -49,15 +46,27 @@ const ContacForm = ({ className }) => {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //posalji prvo netilfy
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...state }),
     })
-      .then(() => console.log("Success!"))
-      .catch((error) => console.log(error));
-
-    e.preventDefault();
+      .then((response) => {
+        if (!response.ok) {
+          return Promise.reject(response.status);
+        }
+        //Ako prodje netilfy, salji dalje pushonjiu
+        sendPushNotificationHandler(name, email, message);
+        return navigate("/thank-you/");
+      })
+      .catch((error) => {
+        alert(
+          "Žao nam je. degodila se greška prilikom slanja Vašeg mejla. Molimo Vas pokušajte kasnije."
+        );
+      });
   };
 
   return (
@@ -119,5 +128,10 @@ export default styled(ContacForm)`
     padding: 0.5rem 0.7rem;
     border: none;
     box-shadow: var(--box-shadow);
+  }
+  .error {
+    color: tomato;
+    margin-left: 1rem;
+    font-family: bold;
   }
 `;
