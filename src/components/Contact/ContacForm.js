@@ -15,7 +15,7 @@ const ContacForm = ({ className }) => {
 
   function sendPushNotificationHandler(name, email, message) {
     if (!name || !email || !message) return;
-    fetch("http://localhost:5000/api/messages/", {
+    fetch("http://localhost:9000/api/messages/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
