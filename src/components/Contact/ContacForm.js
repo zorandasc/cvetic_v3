@@ -7,15 +7,8 @@ const ContacForm = ({ className }) => {
 
   const { name, email, message } = state;
 
-  const handleChange = (e) =>
-    setState((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-
   function sendPushNotificationHandler(name, email, message) {
-    if (!name || !email || !message) return;
-    fetch("http://localhost:9000/api/messages/", {
+    fetch("https://svadbeni-cvet-notifikator.onrender.com/api/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,11 +17,11 @@ const ContacForm = ({ className }) => {
         name: name,
         email: email,
         message: message,
-        dateTime: new Date().toLocaleString(),
       }),
     })
       .then((response) => {
         if (!response.ok) {
+          //send to catch
           return Promise.reject(response.status);
         }
       })
@@ -45,6 +38,12 @@ const ContacForm = ({ className }) => {
       .join("&");
   };
 
+  const handleChange = (e) =>
+    setState((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -56,6 +55,7 @@ const ContacForm = ({ className }) => {
     })
       .then((response) => {
         if (!response.ok) {
+          //send to catch
           return Promise.reject(response.status);
         }
         //Ako prodje netilfy, salji dalje pushonjiu
