@@ -1,34 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { navigate } from "gatsby";
+import sendPushNotificationHandler from "../../hooks/sendPushNotificationHandler";
 
 const ContacForm = ({ className }) => {
   const [state, setState] = useState({ name: "", email: "", message: "" });
 
   const { name, email, message } = state;
-
-  function sendPushNotificationHandler(name, email, message) {
-    fetch("https://svadbeni-cvet-notifikator.onrender.com/api/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        message: message,
-      }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          //send to catch
-          return Promise.reject(response.status);
-        }
-      })
-      .catch((error) => {
-        console.error("There was an error sending PushNotification!", error);
-      });
-  }
 
   const encode = (data) => {
     return Object.keys(data)
@@ -53,16 +31,13 @@ const ContacForm = ({ className }) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...state }),
     })
-      .then((response) => {
-        if (!response.ok) {
-          //send to catch
-          return Promise.reject(response.status);
-        }
+      .then(() => {
         //Ako prodje netilfy, salji dalje pushonjiu
         sendPushNotificationHandler(name, email, message);
         return navigate("/thank-you/");
       })
       .catch((error) => {
+        console.log(error);
         alert(
           "Žao nam je. degodila se greška prilikom slanja Vašeg mejla. Molimo Vas pokušajte kasnije."
         );
