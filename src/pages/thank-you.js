@@ -25,7 +25,7 @@ const thank = ({ data }) => {
       <StayledHero home="true" img={data.aboutBcg}>
         <Banner
           title="hvala vam na kontaktu"
-          info="Vaš email je uspešno poslan."
+          info="Vaš email je uspešno prosljeđen."
         >
           <AniLink fade to="/gallery" className="btn-hero">
             galerija
