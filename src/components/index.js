@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import Seo from "./Seo";
 import Title from "./Title";
 import StayledHero from "./StayledHero";
+import StayledHero2 from "./StayledHero2";
 import Banner from "./Banner";
 import Wave from "./Wave";
 import ScrollButton from "./ScrollButton";
@@ -21,6 +22,7 @@ export {
   Seo,
   Title,
   StayledHero,
+  StayledHero2,
   Banner,
   Wave,
   ScrollButton,

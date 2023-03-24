@@ -1,14 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Seo, StayledHero } from "../components";
+import { Seo, StayledHero2 } from "../components";
 import retro from "../images/retro_rose.svg";
 import Gallerys from "../components/Gallery/Gallerys";
 
 const Gallery = ({ data }) => {
   return (
     <>
-      <StayledHero img={data.roses}></StayledHero>
+      <StayledHero2 img={data.roses}></StayledHero2>
       <div
         style={{
           backgroundImage: `url(${retro})`,

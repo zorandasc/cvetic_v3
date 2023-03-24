@@ -4,14 +4,14 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
-import { Seo, StayledHero, Title } from "../components";
+import { Seo, StayledHero2, Title } from "../components";
 
 export const query = graphql`
   query {
     aboutBcg: file(relativePath: { eq: "band.jpg" }) {
       childImageSharp {
         gatsbyImageData(
-          layout: FULL_WIDTH
+          layout: CONSTRAINED
           placeholder: BLURRED
           formats: [AUTO, WEBP, AVIF]
         )
@@ -23,7 +23,7 @@ export const query = graphql`
 const About = ({ data }) => {
   return (
     <>
-      <StayledHero img={data.aboutBcg}></StayledHero>
+      <StayledHero2 img={data.aboutBcg}></StayledHero2>
       <SectionWrapper>
         <Title title="naša" subtitle="misija"></Title>
         <div className="aboutCenter">

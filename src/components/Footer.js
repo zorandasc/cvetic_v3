@@ -1,11 +1,10 @@
-import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import styled from "styled-components"
+import React from "react";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import styled from "styled-components";
 
-import links from "../constants/links"
-import socialLinks from "../constants/socialIcons"
-import policyLinks from "../constants/policyLinks"
-
+import links from "../constants/links";
+import socialLinks from "../constants/socialIcons";
+import policyLinks from "../constants/policyLinks";
 
 const Footer = ({ className }) => {
   return (
@@ -16,7 +15,7 @@ const Footer = ({ className }) => {
             <AniLink fade key={index} to={item.path}>
               {item.label}
             </AniLink>
-          )
+          );
         })}
       </div>
       <div className="links">
@@ -25,7 +24,7 @@ const Footer = ({ className }) => {
             <AniLink fade key={index} to={item.path} className="policy">
               {item.label}
             </AniLink>
-          )
+          );
         })}
       </div>
       <div className="icons">
@@ -41,7 +40,7 @@ const Footer = ({ className }) => {
             >
               {item.icon}
             </a>
-          )
+          );
         })}
       </div>
       <div className="copyright">
@@ -49,64 +48,65 @@ const Footer = ({ className }) => {
         reserved
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default styled(Footer)`
+  position: absolute;
+  z-index: 100;
+  width: 100%;
   margin-top: auto;
   background: var(--mainBlack);
   color: var(--primaryColor);
   text-align: center;
   padding: 2rem;
 
+  .links {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
 
-.links {
-  margin-top:2rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
+  .links a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primaryColor);
+    margin: 0.5rem 1rem;
+    letter-spacing: var(--mainSpacing);
+    transition: var(--mainTransition);
+  }
 
-.links a {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--primaryColor);
-  margin: 0.5rem 1rem;
-  letter-spacing: var(--mainSpacing);
-  transition: var(--mainTransition);
-}
+  .links a:hover {
+    color: var(--mainWhite);
+  }
 
-.links a:hover {
-  color: var(--mainWhite);
-}
+  .policy {
+    text-transform: capitalize;
+  }
 
-.policy {
-  text-transform: capitalize;
-}
+  .socialIcon {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: var(--mainTransition);
+  }
 
-.socialIcon {
-  display: inline-flex;
-  width: 40px;
-  height: 40px;
-  margin: 20px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  position: relative;
-  font-size: 16px;
-  flex-shrink: 0;
-  transition: var(--mainTransition);
-}
+  .socialIcon:hover,
+  .socialIcon:focus {
+    transform: scale(1.2);
+  }
 
-.socialIcon:hover,
-.socialIcon:focus {
-  transform: scale(1.2);
-}
-
-.copyright {
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
-  line-height: 2;
-}
-
-`
+  .copyright {
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+    line-height: 2;
+  }
+`;

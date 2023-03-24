@@ -1,19 +1,15 @@
-import React from "react"
+import React from "react";
 
-import { AppContext } from "../context"
-import Footer from "./Footer"
-import NavBarDesk from "./NavBarDesk"
-import NavBarMob from "./NavBarMob"
-import Sidebar from "./Sidebar"
+import { AppContext } from "../context";
+import Footer from "./Footer";
+import NavBarDesk from "./NavBarDesk";
+import NavBarMob from "./NavBarMob";
+import Sidebar from "./Sidebar";
 
 const Layout = ({ children }) => {
-  const {
-    width,
-    handleCloseSidebar,
-    handleOpenSidebar,
-    isSidebarOpen,
-  } = React.useContext(AppContext)
-  const TRANSITION_LENGTH = 0.4
+  const { width, handleCloseSidebar, handleOpenSidebar, isSidebarOpen } =
+    React.useContext(AppContext);
+  const TRANSITION_LENGTH = 0.4;
   return (
     <>
       {width > 1100 ? (
@@ -29,8 +25,8 @@ const Layout = ({ children }) => {
       ></Sidebar>
       <div
         style={{
+          position:"relative",
           height: "100vh",
-          //overflow: isSidebarOpen ? "hidden" : "visible",
           transform: isSidebarOpen ? "scale(0.9)" : "none",
           transition: `transform ${TRANSITION_LENGTH}s ease-out`,
         }}
@@ -39,7 +35,7 @@ const Layout = ({ children }) => {
         <Footer></Footer>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

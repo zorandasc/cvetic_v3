@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 
-import { Seo, StayledHero, Title } from "../components";
+import { Seo, StayledHero2, Title } from "../components";
 import socialIcons from "../constants/socialIcons";
 import ContactForm from "../components/Contact/ContacForm";
 
@@ -25,7 +25,7 @@ const Contact = ({ data }) => {
 
   return (
     <>
-      <StayledHero img={data.connectBcg}></StayledHero>
+      <StayledHero2 img={data.connectBcg}></StayledHero2>
       <SectionWrapper>
         <Title title="kontaktirajte" subtitle="nas"></Title>
         <div className="center">

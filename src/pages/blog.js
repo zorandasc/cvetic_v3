@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { Seo, StayledHero } from "../components";
+import { Seo, StayledHero2 } from "../components";
 import Blogs from "../components/Blog/Blogs"
 
 const Blog = ({ data }) => {
   return (
     <>
-      <StayledHero img={data.blog}></StayledHero>
+      <StayledHero2 img={data.blog}></StayledHero2>
       <Blogs></Blogs>
     </>
   );

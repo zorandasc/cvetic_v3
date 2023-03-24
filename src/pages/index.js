@@ -2,15 +2,14 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
-import retro from "../images/retro_rose.svg";
-import { Seo, StayledHero, Banner, Wave, Particle } from "../components";
+import { Seo, StayledHero2, Banner, Wave, Particle } from "../components";
 import AboutHomy from "../components/Home/AboutHomy";
 import FeaturedGalery from "../components/Home/FeaturedGalery";
 
 const IndexPage = ({ data }) => {
   return (
     <>
-      <StayledHero home="true" img={data.defaultBcg}>
+      <StayledHero2 home="true" img={data.defaultBcg}>
         <Banner
           title="svadbeni cvet"
           info="Pridruži nam se i istraži čarobni svet svadbenih rukom pravljenih dekoracija i ukrasa"
@@ -21,17 +20,9 @@ const IndexPage = ({ data }) => {
         </Banner>
         <Wave></Wave>
         <Particle></Particle>
-      </StayledHero>
+      </StayledHero2>
       <AboutHomy></AboutHomy>
-      <div
-        style={{
-          backgroundImage: `url(${retro})`,
-          backgroundAttachment: "fixed",
-          backgroundColor: `var(--mainWhite)`,
-        }}
-      >
-        <FeaturedGalery></FeaturedGalery>
-      </div>
+      <FeaturedGalery></FeaturedGalery>
     </>
   );
 };

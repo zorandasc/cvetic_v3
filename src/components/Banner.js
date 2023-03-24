@@ -1,17 +1,15 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const Banner = ({ className, title, info, children }) => {
   return (
     <div className={className}>
       <h1>{title}</h1>
-      <i>
-        <p>{info}</p>
-      </i>
+      <p>{info}</p>
       {children}
     </div>
-  )
-}
+  );
+};
 
 export default styled(Banner)`
   margin: 4rem auto;
@@ -19,7 +17,7 @@ export default styled(Banner)`
   letter-spacing: var(--mainSpacing);
   color: var(--mainWhite);
   z-index: 3;
-  position: absolute;
+  //position: absolute;
   h1 {
     font-size: 3rem;
     text-transform: capitalize;
@@ -48,7 +46,7 @@ export default styled(Banner)`
 
   @media screen and (min-width: 768px) {
     p {
-      width: 70%;
+      width: 40%;
       margin-bottom: 4rem;
     }
   }
@@ -56,4 +54,4 @@ export default styled(Banner)`
     margin-top: 1rem;
     margin-bottom: 8rem;
   }
-`
+`;

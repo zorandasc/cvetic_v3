@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import Title from "../Title";
 import GalleryCard from "../Gallery/GalleryCard";
+import retro from "../../images/retro_rose.svg";
 
 const getWorks = graphql`
   query {
@@ -51,7 +52,9 @@ const FeaturedGalery = () => {
 const SectionWrapper = styled.section`
   padding: 1rem 0 4rem 0;
   text-align: center;
-  background: transparent;
+  background-image: url(${retro});
+  background-attachment: fixed;
+  background-color: var(--mainWhite);
 
   .center {
     width: 80vw;
