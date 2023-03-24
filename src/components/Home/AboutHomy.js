@@ -4,6 +4,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Title from "../Title";
+import Reklama from "../Reklama";
 
 const AboutHomy = () => {
   return (
@@ -35,6 +36,7 @@ const AboutHomy = () => {
           </AniLink>
         </article>
       </div>
+      <Reklama></Reklama>
     </SectionWrapper>
   );
 };

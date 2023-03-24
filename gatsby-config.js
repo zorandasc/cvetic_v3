@@ -70,6 +70,8 @@ module.exports = {
       },
       __key: "images",
     },
-    `gatsby-plugin-remove-serviceworker`,
+    //when removing gatsby-plugin-offline uncoment this
+    //`gatsby-plugin-remove-serviceworker`,
+    `gatsby-plugin-offline`,
   ],
 };
