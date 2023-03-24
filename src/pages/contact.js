@@ -21,8 +21,6 @@ export const query = graphql`
 `;
 
 const Contact = ({ data }) => {
-  
-
   return (
     <>
       <StayledHero2 img={data.connectBcg}></StayledHero2>
@@ -70,19 +68,19 @@ const SectionWrapper = styled.section`
     width: 90vw;
     margin: 0 auto;
   }
-  /*
+
   .form {
-    background-color: #333;
-    color: whitesmoke;
+    position: relative;
     padding: 1rem;
     box-shadow: var(--box-shadow);
     border-radius: 10px;
+    padding-top: 3rem;
   }
-*/
+
   .icons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 
   .iconContainer {

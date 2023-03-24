@@ -94,15 +94,15 @@ a {
 
 .facebook {
   background: linear-gradient(45deg, #3b5998, #0078d7);
-  box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5);
+  box-shadow:  0px 7px 30px rgba(43, 98, 169, 0.5);
 }
 .pinterest {
   background: linear-gradient(45deg, #d5135a, #f05924);
-  box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.6);
+  box-shadow:  0px 7px 30px rgba(223, 45, 70, 0.6);
 }
 .youtube {
   background: linear-gradient(45deg, #ff0000, #970505);
-  box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.6);
+  box-shadow: 0px 7px 30px rgba(223, 45, 70, 0.6);
 }
 
 .instagram {

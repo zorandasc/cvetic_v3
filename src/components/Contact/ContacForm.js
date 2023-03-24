@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { navigate } from "gatsby";
+import { TfiEmail } from "react-icons/tfi";
+
 import sendPushNotificationHandler from "../../hooks/sendPushNotificationHandler";
 
 const ContacForm = ({ className }) => {
@@ -89,6 +91,9 @@ const ContacForm = ({ className }) => {
         <button type="submit" className="btn-primary">
           Pošalji
         </button>
+        <span className="emailIcon">
+          <TfiEmail size="2em"></TfiEmail>
+        </span>
       </div>
     </form>
   );
@@ -103,10 +108,30 @@ export default styled(ContacForm)`
     padding: 0.5rem 0.7rem;
     border: none;
     box-shadow: var(--box-shadow);
+    border-radius: 10px;
   }
   .error {
     color: tomato;
     margin-left: 1rem;
     font-family: bold;
+  }
+  .emailIcon {
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--mainWhite);
+    border-radius: 50%;
+    background: var(--mainWhite);
+    top: -55px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 `;
