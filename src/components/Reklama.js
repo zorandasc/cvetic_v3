@@ -16,7 +16,7 @@ const Reklama = () => {
         rel="noopener noreferrer"
         aria-label="decorwood"
       >
-        <h2>Decorwood</h2>
+        <h2>Naši partneri</h2>
         <p className="heading">Decorwood</p>
         <p className="text">Dekorativni predmeti od drveta</p>
       </a>

@@ -60,6 +60,11 @@ module.exports = {
         theme_color: `#262626`,
         display: `minimal-ui`,
         icon: `src/images/heart.png`, // This path is relative to the root of the site.
+        icon_options: {
+          // For all the options available,
+          // please see the section "Additional Resources" below.
+          purpose: `any maskable`,
+        },
       },
     },
     {
