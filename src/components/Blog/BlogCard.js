@@ -189,12 +189,12 @@ export default styled(BlogCard)`
     transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     .title {
       font-family: var(--titleFontFamily);
-      font-size: 2rem;
+      font-size: 1.6rem;
       line-height: 2.5rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
-      margin-bottom: 1em;
+      /*margin-bottom: 1em;*/
     }
     .content {
       font-family: var(--textFontFamily);
@@ -254,6 +254,9 @@ export default styled(BlogCard)`
     .card {
       width: 290px;
       height: 370px;
+      .title {
+        font-size: 2rem;
+      }
     }
   }
 `;
