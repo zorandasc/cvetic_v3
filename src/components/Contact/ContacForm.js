@@ -116,7 +116,7 @@ export default styled(ContacForm)`
     font-family: bold;
   }
   .emailIcon {
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--lightShadow);
     display: flex;
     justify-content: center;
     align-items: center;

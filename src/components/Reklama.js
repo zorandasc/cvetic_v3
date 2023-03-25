@@ -28,12 +28,6 @@ const Reklama = () => {
   );
 };
 
-const Gradient = styled.div`
-  position: absolute;
-  inset: 0 0 0 0;
-  background: rgba(0, 0, 0, 0.3);
-`;
-
 const Wrapper = styled.div`
   position: relative;
   border: 3px solid #918a8a;
