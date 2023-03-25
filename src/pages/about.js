@@ -47,7 +47,7 @@ const About = ({ data }) => {
           <article className="aboutImg">
             <div className="imgContainer">
               <StaticImage
-                src="../../images/about.jpg"
+                src="../images/about.jpg"
                 alt="about picture"
                 placeholder="blurred"
                 layout="constrained"
@@ -72,7 +72,7 @@ const About = ({ data }) => {
           <article className="aboutImg item1">
             <div className="imgContainer">
               <StaticImage
-                src="../../images/crkva.jpg"
+                src="../images/crkva.jpg"
                 alt="churc picture"
                 placeholder="blurred"
                 layout="constrained"

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 
-import decorheart from "../../images/decorheart.jpg";
+import decorheart from "../images/decorheart.jpg";
 
 const Reklama = () => {
   const [showReklama, setShowReklama] = React.useState(true);
